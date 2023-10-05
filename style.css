@@ -1,135 +1,139 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	transition-duration: 300ms;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition-duration: 300ms;
 }
 
 body {
-	height: 100vh;
-	background: linear-gradient(135deg, #789975, #7572a5);
-	font-family: sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 50px;
-	padding: 2em;
+    height: 100vh;
+    background: linear-gradient(135deg, #789975, #7572a5);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 2em;
 }
 
 h1,
-.container{
-	max-width: 800px;
+.container {
+    max-width: 800px;
 }
 
 h1 {
-	text-align: center;
+    text-align: center;
 }
 
 .container {
-	border: 2px solid rgb(165, 77, 42);
-	border-radius: 30px;
-	display: flex;
-	background-color: rgba(255, 255, 255, 0.3);
-	padding: 2em;
+    border: 2px solid rgb(165, 77, 42);
+    border-radius: 30px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2em;
 }
 
-.items{
-	min-width: 300px;
- }
+.items {
+    min-width: 300px;
+}
 
 .single-item {
-	display: flex;
-	border-bottom: 1px solid grey;
-	padding: 0.8em 0;
+    display: flex;
+    border-bottom: 1px solid grey;
+    padding: 0.8em 0;
 }
 
 .single-item img {
-	padding: 0.8em;
-	max-width: 100px;
+    padding: 0.8em;
+    max-width: 100px;
 }
 
 .single-item .si-content {
-	padding: 0.8em 0;
-	min-width: 120px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;	
+    padding: 0.8em 0;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.single-item .si-content p, h3{
-	font-size: 1rem;
-	padding: 0.3em 1em;
+.single-item .si-content p,
+h3 {
+    font-size: 1rem;
+    padding: 0.3em 1em;
 }
 
 .single-item .actions {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 8px;
-	max-width: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    max-width: 48px;
 }
 
 .single-item .actions input {
-	font-size: 1rem;
-	padding: 0.2em;
-	max-width: 48px;
+    font-size: 1rem;
+    padding: 0.2em;
+    max-width: 48px;
 }
 
 .single-item .actions button {
-	text-align: center;
-	border: 2px solid rgb(107, 114, 107);
-	padding: 0.2em;
-	background: #a2b6a8;
-	max-width: 60px;
+    text-align: center;
+    border: 2px solid rgb(107, 114, 107);
+    padding: 0.2em;
+    background: #a2b6a8;
+    max-width: 48px;
+    padding: 0.1em;
 }
 
 .single-item .actions button:hover,
-.cart-single-item button:hover{
-	background: #85968a;	
+.cart-single-item button:hover {
+    background: #85968a;
 }
 
 .cart {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	border-left: solid 1px black;
-	background-image: url(img/cart.png);	
-	background-size: 100px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-blend-mode: difference;	
-	padding-left: 1em;	
-	gap: 20px;	
-	min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-left: solid 1px black;
+    background-image: url(img/cart.png);
+    background-size: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: difference;
+    padding-left: 1em;
+    gap: 20px;
+    min-width: 250px;
 }
 
-.cart-single-item {	
-	display: flex;
- 	align-items: center;
-	justify-content: space-between;
-	gap: 20px;
-	padding: 2px;
+.cart-single-item {
+    max-width: 230px;
+    font-size: 0.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
 }
 
-.cart-single-item h3 {	
-	min-width: 70px;
-	padding: 0;
+.cart-single-item h3 {
+    min-width: 70px;
+    padding: 0;
 }
 
 .cart-single-item p {
-	min-width: 120px;	
+    min-width: 90px;
 }
-	
-.cart-single-item button {	
-	background: #a2b6a8;
-	padding: 0.3em;
-	border: 2px solid rgb(107, 114, 107);	
+
+.cart-single-item button {
+    background: #a2b6a8;
+    padding: 0.2em;
+    border: 2px solid rgb(107, 114, 107);
 }
 
 .total {
-	display: flex;
-	position: absolute;
-	bottom: 15px;
-	right: 20px;
-	font-size: 1.5rem;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    font-size: 1.5rem;
 }

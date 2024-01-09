@@ -1,53 +1,72 @@
-let allTotal = 0
+let cartTotal = 0
+
+// const addButtons = document.querySelectorAll("#actions button")
+// const addButton = document.getElementById("add-button")
+
+// addButton.addEventListener("click", addToCart)
+
+// let btns = document.querySelectorAll("button")
+
+// addButtons.forEach((addButton) => {
+//     addButton.addEventListener("click", addToCart)
+// })
 
 //function adds items to cart and adds up total
 function addToCart(element) {
-    let mainEl = element.closest(".single-item")
-    let price = mainEl.querySelector(".price").innerText
-    let name = mainEl.querySelector("h3").innerText
-    let quantity = mainEl.querySelector("input").value
-    let cartItems = document.querySelector(".cart-items")
+    //
+    let singleItemElement = element.closest(".single_item")
+    let itemName = singleItemElement.querySelector(".item_name").innerText
+    let itemPrice = singleItemElement.querySelector(".item_price").innerText
+    let itemQuantity = singleItemElement.querySelector("input").value
 
-    if (parseInt(quantity) > 0) {
-        price = parseInt(price.substring(1))
-        quantity = parseInt(quantity)
+    // string to int
+    itemPrice = parseInt(itemPrice.substring(1))
+    itemQuantity = parseInt(itemQuantity)
 
-        let total = price * quantity
+    // adding up total value of every item separately
+    let itemPriceTotal = itemPrice * itemQuantity
 
-        allTotal += total
+    // adding up every separately values all together
+    cartTotal += itemPriceTotal
 
-        cartItems.innerHTML += `<div class="cart-single-item">
-                            <h3>${name}</h3>
-                            <p>${quantity} x ${price} = $<span>${total}</span></p>
-                            <button onclick="removeFromCart(this)" class="remove-item">Remove</button>
-                            </div>`
+    const cart = document.getElementById("cart")
 
-        document.querySelector(".total").innerText = `Total: $${allTotal}`
+    cart.innerHTML += `  <div
+                        class="row flex-nowrap pt-3 cart_single_item"
+                        >
+                            <div class="col-3 p-0"><h6 class="lh-base">${itemName}</h6></div>
+                            <div class="col-5 text-center p-0">
+                            <p>${itemQuantity} x ${itemPrice} = $<span>${itemPriceTotal}</span></p>
+                             </div>
+                            <div class="col text-end p-0">
+                            <button
+                            onclick="removeFromCart(this)" 
+                                id="remove-item"
+                                class="btn btn-primary remove_button">
+                                Remove
+                            </button>
+                        </div>
+                        </div> `
 
-        element.innerText = "Added"
-    }
+    const total = document.getElementById("total")
+    total.innerHTML = `<div class="col pb-3  fs-4"><p>Total: $${cartTotal}</p></div>`
 }
 
 //function removes items from cart and subtracts total
 function removeFromCart(element) {
-    let mainEl = element.closest(".cart-single-item")
-    let price = mainEl.querySelector("p span").innerText
-    let name = mainEl.querySelector("h3").innerText
-    let vegetables = document.querySelectorAll(".single-item")
+    let cartSingleItemElement = element.closest(".cart_single_item")
+    let itemPriceTotal = cartSingleItemElement.querySelector("p span").innerText
 
-    price = parseInt(price)
+    // let price = mainEl.querySelector("p span").innerText
+    // let name = mainEl.querySelector("h3").innerText
+    let vegetables = document.querySelectorAll(".single_item")
+    console.log(vegetables)
 
-    allTotal -= price
+    itemPriceTotal = parseInt(itemPriceTotal)
 
-    document.querySelector(".total").innerText = `Total: $${allTotal}`
+    cartTotal -= itemPriceTotal
 
-    mainEl.remove()
+    document.getElementById("total").innerHTML = `<div class="col pb-3  fs-4"><p">Total: $${cartTotal}</p></div>`
 
-    vegetables.forEach(function (vege) {
-        let vegeName = vege.querySelector(".si-content h3").innerText
-
-        if (vegeName === name) {
-            vege.querySelector(".actions input").value = 1
-        }
-    })
+    cartSingleItemElement.remove()
 }

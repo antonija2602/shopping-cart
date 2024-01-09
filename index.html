@@ -1,76 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <!-- <html lang="en" data-bs-theme="dark"> EXAMPLE dark theme  -->
+    <!-- We can add the line -data-bs-theme="dark"- to set a theme -->
     <head>
         <title>Shopping Cart</title>
+
+        <!-- Required meta tags -->
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+
+        <!-- Bootstrap CSS -->
         <link
             rel="stylesheet"
-            type="text/css"
+            href="bootstrap.css" />
+        <!-- style.css -->
+        <link
+            rel="stylesheet"
             href="style.css" />
+        <!-- JavaScript -->
+        <script
+            src="script.js"
+            defer></script>
     </head>
+
     <body>
-        <h1>Shopping Cart</h1>
+        <!--==================== HEADER ====================-->
+        <header
+            class="bg-header bg-dark-subtle"
+            id="header">
+            <!-- header -->
+            <div class="container text-center py-4"><h1 class="fw-bolder">Shopping Cart</h1></div>
+        </header>
 
-        <div class="container">
-            <div class="items">
-                <h2>Vegetables</h2>
+        <!--==================== MAIN ====================-->
+        <main class="bg-dark-subtle vh-100">
+            <div class="container shadow-lg p-5 rounded-3 bg-light">
+                <div class="row flex-nowrap">
+                    <!-- items -->
+                    <div
+                        class="col-7 border p-5 shadow-sm rounded-1"
+                        id="items">
+                        <h2 class="border-bottom border-danger-subtle">Vegetables</h2>
 
-                <div class="single-item">
-                    <img src="img/potato.png" />
-                    <div class="si-content">
-                        <h3>Potato</h3>
-                        <p class="price">$10</p>
-                    </div>
-                    <div class="actions">
-                        <input
-                            type="number"
-                            name="quantity"
-                            value="1"
-                            min="0" />
-                        <button onclick="addToCart(this)">Add</button>
-                    </div>
-                </div>
+                        <!-- potato -->
+                        <div class="row justify-content-center flex-nowrap py-4 border-bottom border-danger-subtle single_item">
+                            <!-- img -->
+                            <div class="col object-fit-cover">
+                                <img
+                                    style="width: 100px"
+                                    class="object-fit-cover"
+                                    src="img/potato.png" />
+                            </div>
 
-                <div class="single-item">
-                    <img src="img/tomato.png" />
-                    <div class="si-content">
-                        <h3>Tomato</h3>
-                        <p class="price">$20</p>
-                    </div>
-                    <div class="actions">
-                        <input
-                            type="number"
-                            name="quantity"
-                            value="1"
-                            min="0" />
-                        <button onclick="addToCart(this)">Add</button>
-                    </div>
-                </div>
+                            <!-- price -->
+                            <div class="col d-flex flex-column justify-content-evenly single_item_content">
+                                <h3
+                                    id="item-name"
+                                    class="item_name">
+                                    Potato
+                                </h3>
+                                <p
+                                    class="item_price"
+                                    id="item-price">
+                                    $10
+                                </p>
+                            </div>
 
-                <div class="single-item">
-                    <img src="img/carrot.png" />
-                    <div class="si-content">
-                        <h3>Carrot</h3>
-                        <p class="price">$30</p>
+                            <!-- add -->
+                            <div class="col d-flex flex-column justify-content-evenly align-items-end actions">
+                                <input
+                                    class="w-50"
+                                    type="number"
+                                    name="quantity"
+                                    value="1"
+                                    min="0" />
+                                <button
+                                    onclick="addToCart(this)"
+                                    id="add-button"
+                                    class="btn btn-primary px-4">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- tomato -->
+                        <div class="row justify-content-center flex-nowrap py-4 border-bottom border-danger-subtle single_item">
+                            <!-- img -->
+                            <div class="col object-fit-cover">
+                                <img
+                                    style="width: 100px"
+                                    class="object-fit-cover"
+                                    src="img/tomato.png" />
+                            </div>
+
+                            <!-- price -->
+                            <div class="col d-flex flex-column justify-content-evenly single_item_content">
+                                <h3
+                                    id="item-name"
+                                    class="item_name">
+                                    Tomato
+                                </h3>
+                                <p
+                                    class="item_price"
+                                    id="item-price">
+                                    $20
+                                </p>
+                            </div>
+
+                            <!-- add -->
+                            <div class="col d-flex flex-column justify-content-evenly align-items-end actions">
+                                <input
+                                    class="w-50"
+                                    type="number"
+                                    name="quantity"
+                                    value="1"
+                                    min="0" />
+                                <button
+                                    class="btn btn-primary px-4"
+                                    onclick="addToCart(this)">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- carrot -->
+                        <div class="row justify-content-center flex-nowrap py-4 border-bottom border-danger-subtle single_item">
+                            <!-- img -->
+                            <div class="col object-fit-cover">
+                                <img
+                                    style="width: 100px"
+                                    class="object-fit-cover"
+                                    src="img/carrot.png" />
+                            </div>
+
+                            <!-- price -->
+                            <div class="col d-flex flex-column justify-content-evenly single_item_content">
+                                <h3
+                                    id="item-name"
+                                    class="item_name">
+                                    Carrot
+                                </h3>
+                                <p
+                                    class="item_price"
+                                    id="item-price">
+                                    $30
+                                </p>
+                            </div>
+
+                            <!-- add -->
+                            <div class="col d-flex flex-column justify-content-evenly align-items-end actions">
+                                <input
+                                    class="w-50"
+                                    type="number"
+                                    name="quantity"
+                                    value="1"
+                                    min="0" />
+                                <button
+                                    class="btn btn-primary px-4"
+                                    onclick="addToCart(this)">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="actions">
-                        <input
-                            type="number"
-                            name="quantity"
-                            value="1"
-                            min="0" />
-                        <button onclick="addToCart(this)">Add</button>
+
+                    <!-- cart -->
+                    <div
+                        class="col-5 p-5 d-flex flex-column position-relative border shadow-sm"
+                        id="cart">
+                        <h2 class="border-bottom border-danger-subtle">Cart</h2>
+
+                        <div
+                            class="row border-2 align-self-end position-absolute bottom-0 pt-5"
+                            id="total">
+                            <div class="col pb-3 fs-4"><p>Total: $0</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="cart">
-                <h2>Cart</h2>
-                <div class="cart-items"></div>
-
-                <div class="total"></div>
-            </div>
-        </div>
-
-        <script src="script.js"></script>
+        </main>
     </body>
 </html>
